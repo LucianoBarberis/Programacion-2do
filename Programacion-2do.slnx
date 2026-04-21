@@ -1,1 +1,9 @@
-<Solution />
+<Solution>
+  <Folder Name="/Elementos de la solución/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Folder Name="/Elementos de la solución/1erCuatrimestre/">
+    <Project Path="AlquilerDeVehiculos/AlquilerDeVehiculos.csproj" Id="301abf46-2239-41ed-9283-28a6a0bda485" />
+    <Project Path="AppDePasaje-POO/AppDePasaje-POO.csproj" Id="a5554fbe-9c7e-4a72-a6f5-9556dc1ac647" />
+  </Folder>
+</Solution>

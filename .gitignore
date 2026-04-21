@@ -1,0 +1,7 @@
+*.exe
+*.rar
+.vs/
+.vs
+*bin
+*obj
+*Debug
