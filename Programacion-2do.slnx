@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Cuatrimestre 1/AppDePasaje-POO/AppDePasaje-POO.csproj" />
+  <Project Path="Cuatrimestre 1/AppDGV/AppDGV.csproj" />
   <Project Path="Cuatrimestre 1/GestionRRHH/GestionRRHH.csproj" />
 </Solution>
