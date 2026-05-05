@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FromUMLtoApp
 {
-    public class Contenido
+    public abstract class Contenido
     {
         private string _titulo = string.Empty;
         private Genero _genero;
@@ -13,7 +13,7 @@ namespace FromUMLtoApp
         private int _añoLanzamiento;
         private decimal _duracionEnMinutos;
         private List<Actor> _actors = new List<Actor>();
-
+        public abstract string MostrarInfo();
         public string Titulo { get => _titulo; set => _titulo = value; }
         public Genero Genero { get => _genero; set => _genero = value; }
         public Director Director { get => _director; set => _director = value; }

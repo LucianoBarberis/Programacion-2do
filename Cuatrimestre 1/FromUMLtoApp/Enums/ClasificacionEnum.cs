@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FromUMLtoApp.Enums
 {
-    enum ClasificacionEnum
+    public enum ClasificacionEnum
     {
         ATP,
         Mas13,
