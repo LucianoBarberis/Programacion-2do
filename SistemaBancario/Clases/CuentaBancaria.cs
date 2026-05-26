@@ -10,19 +10,14 @@ namespace SistemaBancario.Clases
 {
     public abstract class CuentaBancaria
     {
-        public int NumeroCuenta { get; }
-        public string Titular { get; }
-        public decimal Saldo { get; protected set; }
+        private int numeroCuenta;
+        private string titular;
+        private decimal saldo;
 
-        public CuentaBancaria(string titular)
-        {
-            if (string.IsNullOrWhiteSpace(titular))
-                throw new ("Datos de cuenta inválidos.");
+        public int NumeroCuenta { get => numeroCuenta; }
+        public string Titular { get => titular; }
+        public decimal Saldo { get => saldo; protected set => saldo = value; }
 
-            NumeroCuenta = RandomNumberGenerator.GetInt32(1000000, 9000000);
-            Titular = titular;
-            Saldo = 0;
-        }
 
         public virtual void Depositar(decimal monto)
         {

@@ -116,8 +116,8 @@ namespace SistemaBancario
             var titular = Console.ReadLine();
 
             CuentaBancaria cuenta = tipoAhorro
-                ? new CuentaAhorros(titular)
-                : new CuentaCorriente(titular);
+                ? new CuentaAhorros()
+                : new CuentaCorriente();
 
             banco.AgregarCuenta(cuenta);
             Console.WriteLine("Cuenta creada correctamente.");

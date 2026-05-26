@@ -8,36 +8,32 @@ namespace SistemaBancario.Clases
 {
     public class CuentaAhorros : CuentaBancaria
     {
-        private int retirosEsteMes;
-        private int mesRegistro;
-
+        private int retirosEsteMes = DateTime.Now.Month;
+        private int mesRegistro = 0;
         private const int LIMITE_RETIROS_MES = 3;
 
-        public CuentaAhorros(string titular)
-            : base(titular)
-        {
-            mesRegistro = DateTime.Now.Month;
-            retirosEsteMes = 0;
-        }
+        public int RetirosEsteMes { get => retirosEsteMes; set => retirosEsteMes = value; }
+        public int MesRegistro { get => mesRegistro; set => mesRegistro = value; }
+        public static int LIMITE_RETIROS_MES1 => LIMITE_RETIROS_MES;
 
         public override void Retirar(decimal monto)
         {
             if (monto <= 0) throw new DatosInvalidosException("El monto de retiro debe ser mayor que cero.");
 
-            if (mesRegistro != DateTime.Now.Month)
+            if (MesRegistro != DateTime.Now.Month)
             {
-                retirosEsteMes = 0;
-                mesRegistro = DateTime.Now.Month;
+                RetirosEsteMes = 0;
+                MesRegistro = DateTime.Now.Month;
             }
 
-            if (retirosEsteMes >= LIMITE_RETIROS_MES)
-                throw new LimiteRetirosExcedidoException($"Límite de {LIMITE_RETIROS_MES} retiros mensuales excedido.");
+            if (RetirosEsteMes >= LIMITE_RETIROS_MES1)
+                throw new LimiteRetirosExcedidoException($"Límite de {LIMITE_RETIROS_MES1} retiros mensuales excedido.");
 
             if (Saldo < monto)
                 throw new FondosInsuficientesException("Fondos insuficientes.");
 
             Saldo -= monto;
-            retirosEsteMes++;
+            RetirosEsteMes++;
         }
     }
 }

@@ -9,15 +9,13 @@ namespace SistemaBancario.Clases
     public class CuentaCorriente : CuentaBancaria
     {
         private const decimal SOBREGIRO_MAXIMO = 100_000m;
-
-        public CuentaCorriente(string titular)
-            : base(titular) { }
+        public static decimal SOBREGIRO_MAXIMO1 => SOBREGIRO_MAXIMO;
 
         public override void Retirar(decimal monto)
         {
             if (monto <= 0) throw new DatosInvalidosException("El monto de retiro debe ser mayor que cero.");
 
-            decimal disponible = Saldo + SOBREGIRO_MAXIMO;
+            decimal disponible = Saldo + SOBREGIRO_MAXIMO1;
             if (monto > disponible)
                 throw new FondosInsuficientesException("Fondos insuficientes (incluyendo sobregiro).");
 
