@@ -10,9 +10,9 @@ namespace SistemaBancario.Clases
 {
     public abstract class CuentaBancaria
     {
-        private int numeroCuenta;
+        private int numeroCuenta = RandomNumberGenerator.GetInt32(100000, 999999);
         private string titular;
-        private decimal saldo;
+        private decimal saldo = 0;
 
         public int NumeroCuenta { get => numeroCuenta; }
         public string Titular { get => titular; }
