@@ -3,4 +3,5 @@
   <Project Path="Cuatrimestre 1/AppDGV/AppDGV.csproj" />
   <Project Path="Cuatrimestre 1/FromUMLtoApp/FromUMLtoApp.csproj" />
   <Project Path="Cuatrimestre 1/GestionRRHH/GestionRRHH.csproj" />
+  <Project Path="SistemaBancario/SistemaBancario.csproj" Id="4ba49f88-8f8e-4704-b008-cf2e22495e21" />
 </Solution>
