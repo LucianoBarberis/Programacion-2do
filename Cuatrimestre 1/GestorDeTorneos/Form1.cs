@@ -1,3 +1,4 @@
+using GestorDeTorneos.Clases;
 using GestorDeTorneos.Vistas;
 using System.Collections;
 
@@ -24,6 +25,17 @@ namespace GestorDeTorneos
             NewTorneo form = new NewTorneo(_repo);
             form.ShowDialog();
             _bsTorneos.ResetBindings(false);
+        }
+
+        private void btnGestTorneo_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is not Torneo torneoSel)
+            {
+                MessageBox.Show("Seleccioná un torneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            GestionarTorneos form = new GestionarTorneos(torneoSel, _repo);
+            form.ShowDialog();
         }
     }
 }

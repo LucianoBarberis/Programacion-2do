@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             inpName = new TextBox();
             lblTitle = new Label();
             label1 = new Label();
@@ -37,19 +36,11 @@
             btnAdd = new Button();
             btnCancel = new Button();
             inpGame = new ComboBox();
-            juegoBindingSource2 = new BindingSource(components);
-            juegoBindingSource = new BindingSource(components);
-            juegoBindingSource1 = new BindingSource(components);
-            partidaBindingSource = new BindingSource(components);
             label3 = new Label();
             inpDate = new DateTimePicker();
             label4 = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)inpPrice).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)juegoBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)juegoBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)juegoBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)partidaBindingSource).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -112,7 +103,7 @@
             // 
             btnCancel.Location = new Point(12, 401);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(298, 26);
+            btnCancel.Size = new Size(298, 30);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancelar";
             btnCancel.UseVisualStyleBackColor = true;
@@ -125,22 +116,6 @@
             inpGame.Name = "inpGame";
             inpGame.Size = new Size(281, 28);
             inpGame.TabIndex = 9;
-            // 
-            // juegoBindingSource2
-            // 
-            juegoBindingSource2.DataSource = typeof(Clases.Juego);
-            // 
-            // juegoBindingSource
-            // 
-            juegoBindingSource.DataSource = typeof(Clases.Juego);
-            // 
-            // juegoBindingSource1
-            // 
-            juegoBindingSource1.DataSource = typeof(Clases.Juego);
-            // 
-            // partidaBindingSource
-            // 
-            partidaBindingSource.DataSource = typeof(Clases.Partida);
             // 
             // label3
             // 
@@ -187,19 +162,17 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(321, 441);
+            ClientSize = new Size(322, 443);
             Controls.Add(panel1);
             Controls.Add(btnCancel);
             Controls.Add(btnAdd);
             Controls.Add(lblTitle);
+            MaximumSize = new Size(340, 490);
+            MinimumSize = new Size(340, 490);
             Name = "NewTorneo";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Gestor de Torneos | Nuevo Torneo";
             ((System.ComponentModel.ISupportInitialize)inpPrice).EndInit();
-            ((System.ComponentModel.ISupportInitialize)juegoBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)juegoBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)juegoBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)partidaBindingSource).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -220,9 +193,5 @@
         private DateTimePicker inpDate;
         private Label label4;
         private Panel panel1;
-        private BindingSource partidaBindingSource;
-        private BindingSource juegoBindingSource;
-        private BindingSource juegoBindingSource1;
-        private BindingSource juegoBindingSource2;
     }
 }

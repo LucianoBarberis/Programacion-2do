@@ -85,6 +85,7 @@
             btnGestTorneo.TabIndex = 4;
             btnGestTorneo.Text = "Gestionar Torneo";
             btnGestTorneo.UseVisualStyleBackColor = true;
+            btnGestTorneo.Click += btnGestTorneo_Click;
             // 
             // btnAboutUs
             // 
@@ -100,14 +101,17 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(629, 451);
+            ClientSize = new Size(632, 453);
             Controls.Add(btnAboutUs);
             Controls.Add(btnGestTorneo);
             Controls.Add(btnNewTorneo);
             Controls.Add(label2);
             Controls.Add(listBox1);
             Controls.Add(label1);
+            MaximumSize = new Size(650, 500);
+            MinimumSize = new Size(650, 500);
             Name = "Form1";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestor de Torneos | Inicio";
             ResumeLayout(false);

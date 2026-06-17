@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GestorDeTorneos.Clases
+﻿namespace GestorDeTorneos.Clases
 {
     public class Partida
     {
-        private Equipo resultado;
-        private Equipo equipo1;
-        private Equipo equipo2;
+        public string Descripcion { get; set; } = string.Empty;
+        public Equipo EquipoLocal { get; set; }
+        public Equipo EquipoVisitante { get; set; }
+        public DateTime Fecha { get; set; }
+        public EstadoPartida Estado { get; set; } = EstadoPartida.Programada;
+        public string Resultado { get; set; } = string.Empty;
 
-        internal Equipo Resultado { get => resultado; set => resultado = value; }
-        internal Equipo Equipo1 { get => equipo1; set => equipo1 = value; }
-        internal Equipo Equipo2 { get => equipo2; set => equipo2 = value; }
+        public override string ToString()
+        {
+            var local = EquipoLocal?.Nombre ?? "TBD";
+            var visit = EquipoVisitante?.Nombre ?? "TBD";
+            return $"{local} vs {visit} - {Fecha.ToShortDateString()} [{Estado}]";
+        }
     }
 }

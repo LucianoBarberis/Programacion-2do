@@ -1,4 +1,4 @@
-﻿enum Rangos
+﻿public enum Rangos
 {
     Silver,
     Nova,

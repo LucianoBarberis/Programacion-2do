@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GestorDeTorneos.Clases
+﻿namespace GestorDeTorneos.Clases
 {
-    internal class Jugador
+    public class Jugador
     {
-        private string name;
-        private string userName;
-        private int edad;
-        private Rangos rango;
-        private Region region;
+        public string Nombre { get; set; } = string.Empty;
+        public string UserName { get; set; } = string.Empty;
+        public int Edad { get; set; }
+        public Rangos Rango { get; set; }
+        public Region Region { get; set; }
+
+        public override string ToString() => $"{UserName} ({Nombre})";
     }
 }

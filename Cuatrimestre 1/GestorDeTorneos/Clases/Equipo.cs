@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GestorDeTorneos.Clases
+﻿namespace GestorDeTorneos.Clases
 {
-    internal class Equipo
+    public class Equipo
     {
-        private List<Jugador> jugadores;
-        private Entrenador entrenador;
-        private string nombre;
+        public string Nombre { get; set; } = string.Empty;
+        public Juego Juego { get; set; }
+        public Entrenador Entrenador { get; set; }
+        public List<Jugador> Jugadores { get; set; } = new();
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        internal List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
-        internal Entrenador Entrenador { get => entrenador; set => entrenador = value; }
+        public bool EstaCompleto => Jugadores.Count >= (Juego?.JugadoresPorEquipo ?? 0);
+        public int CuposDisponibles => (Juego?.JugadoresPorEquipo ?? 0) - Jugadores.Count;
+
+        public override string ToString() => $"{Nombre} ({Juego?.Nombre})";
     }
 }

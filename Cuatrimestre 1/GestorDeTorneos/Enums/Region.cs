@@ -1,4 +1,4 @@
-﻿enum Region
+﻿public enum Region
 {
     BR,
     EU,
