@@ -222,22 +222,24 @@ namespace POSencillo
                     decimal subTotal = Carrito.Sum(prod => prod.Price);
                     decimal iva = subTotal * (decimal)0.21;
                     decimal total = subTotal + iva;
-                    IEnumerable<int> Repetidos = new List<int>();
+                    List<int> Repetidos = new List<int>();
                     foreach (var producto in Carrito)
                     {
                         var ProductoEnInventario = Inventario.FirstOrDefault(prod => prod.Id == producto.Id);
+                        Repetidos.Add(producto.Id);
                         ProductoEnInventario.Stock = ProductoEnInventario.Stock - 1;
                         Console.WriteLine("Eliminado producto del inventario: ");
                         Console.WriteLine(producto.Name);
                         Console.ReadKey();
                     }
+                    
                     Console.Clear();
                     Console.WriteLine("========================================");
                     Console.WriteLine("           TICKET DE VENTA");
                     Console.WriteLine("========================================");
                     Console.WriteLine("Producto          Precio           Total");
                     Console.WriteLine("----------------------------------------");
-                    Carrito.ForEach(prod => Console.WriteLine(prod.Name + "          $" + prod.Price + "           " + " " + prod.Price));
+                    Carrito.ForEach(prod => Console.WriteLine(prod.Name + "          $" + prod.Price + "           " + " " + (prod.Price * Repetidos.Count(x => x == prod.Id))));
                     Console.WriteLine("----------------------------------------");
                     Console.WriteLine("Subtotal:                         $" + subTotal);
                     Console.WriteLine("IVA (21%):                        $" + iva);
