@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TP_01_GestionDeFacturas.Modelos
+﻿namespace TP_01_GestionDeFacturas.Modelos
 {
     public class Factura
     {
-        private int Id { get; set; }
-        private int facturaNro { get; set; }
-        private DateTime dateCreated { get; set; }
-        private string clientName { get; set; }
-        private string clientDni { get; set; }
-        private decimal totalAmount { get; set; }
+        public int Id { get; set; }
+        public int Numero { get; set; }
+        public DateTime Fecha { get; set; }
+        public string ClienteNombre { get; set; } = string.Empty;
+        public string ClienteDocumento { get; set; } = string.Empty;
+        public decimal Total { get; set; }
+
+        public List<FacturaDetalle> Detalles { get; set; } = new();
     }
 }

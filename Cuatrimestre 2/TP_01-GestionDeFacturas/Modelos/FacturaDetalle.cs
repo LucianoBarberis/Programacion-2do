@@ -1,18 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TP_01_GestionDeFacturas.Modelos
+﻿namespace TP_01_GestionDeFacturas.Modelos
 {
     public class FacturaDetalle
     {
-        private int id { get; set; }
-        private int facturaId { get; set; }
-        private int productId { get; set; }
-        private int cantidad { get; set; }
-        private decimal precioUnitario { get; set; }
-        private decimal subtotal { get; set; }
+        public int Id { get; set; }
+        public int FacturaId { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        public decimal Subtotal { get; set; }
+
+        // Solo para mostrar en grilla (JOIN)
+        public string ProductoNombre { get; set; } = string.Empty;
+        public int ProductoCodigo { get; set; }
+    }
+
+    public class InformeProducto
+    {
+        public int ProductoId { get; set; }
+        public int Codigo { get; set; }
+        public string Nombre { get; set; } = string.Empty;
+        public int CantidadFacturada { get; set; }
+        public decimal MontoFacturado { get; set; }
     }
 }
