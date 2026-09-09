@@ -1,0 +1,8 @@
+| Criterios | Modo Conectado | Modo Desconectado
+|---|---|---|
+| permanencia de la conexión (Open / Close) | La conexión permanece abierta durante toda la operación. Se abre al inicio y se cierra al final. | La conexión se abre solo el tiempo necesario para traer o enviar datos, luego se cierra inmediatamente. |
+| objetos típicos | SqlConnection, SqlCommand, SqlDataReader | SqlDataAdapter, DataSet, DataTable |
+| dónde vive el modelo de datos en la aplicación | En la base de datos. Los datos se leen bajo demanda. | En la memoria de la aplicación (DataSet/DataTable actúa como caché local). |
+| cómo se leen los datos | Mediante SqlDataReader con lectura secuencial se lee registro por registro mientras la conexión está abierta. | SqlDataAdapter.Fill() trae todos los datos de una vez y los almacena en DataSet/DataTable. Se pueden leer sin conexión activa. |
+| cómo se persisten los cambios | Los cambios se aplican directamente a la BD con ExecuteNonQuery(), ExecuteScalar(). | Los cambios se hacen localmente en DataSet/DataTable, luego SqlDataAdapter.Update() sincroniza con la BD en una operación. |
+| ventajas y desventajas o cuándo conviene cada uno | Ventajas: Menor consumo de memoria, datos siempre actualizados, ideal para operaciones simples/rápidas. Desventajas: Conexión activa consume recursos, no es escalable para muchos usuarios concurrentes, no se puede trabajar offline. | Ventajas: Conexión breve (escalable), permite trabajar offline, ideal para cambios complejos, soporta concurrencia optimista. Desventajas: Mayor uso de memoria, posibles conflictos de concurrencia, datos pueden estar desactualizados. |
